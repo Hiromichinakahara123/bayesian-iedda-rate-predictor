@@ -1,0 +1,14 @@
+name: iedda-model
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - rdkit
+  - pymc
+  - arviz
+  - pandas
+  - numpy
+  - matplotlib
+  - seaborn
+  - scikit-learn
+  - ipykernel
