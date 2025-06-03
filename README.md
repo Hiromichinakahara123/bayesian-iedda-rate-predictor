@@ -1,57 +1,34 @@
+# Bayesian Model for IEDDA Rate Constant Prediction
 
-# Bayesian Prediction of IEDDA Reaction Rate Constants
+This repository contains the Python code and Jupyter Notebook used to perform molecular descriptor calculations, PCA-based dimensionality reduction, and Bayesian Gaussian Process regression to predict rate constants of IEDDA reactions.
 
-This repository contains the Python code and data used for the Bayesian Gaussian Process modeling of second-order rate constants in inverse-electron-demand Diels–Alder (IEDDA) reactions, as described in our manuscript.
+## Files Included
 
-## 📄 Manuscript Summary
+- `Bayesian_IEDDA_Model_with_GP.ipynb`: Main notebook (Google Colab compatible)
+- `environment.yml`: Environment file for conda setup
 
-We employed molecular descriptors from RDKit, PCA-based dimensionality reduction, and a PyMC-based Gaussian Process regression with a lognormal likelihood to predict second-order rate constants (*k₂*) for reactions involving norbornene (NB) and tetrazine (Tz) derivatives.
+## Data Source
 
-## 🔧 Repository Structure
+The dataset used in this analysis was extracted from the following publications:
 
-```
-bayesian-iedda-rate-predictor/
-├── README.md               ← Overview and usage guide
-├── environment.yml         ← Software dependencies
-├── main.ipynb              ← Main notebook for data analysis and modeling
-├── data/
-│   └── rate_constant_IEDDA.csv  ← Experimental data used for modeling
-└── models/
-    └── gp_model_final.pkl  ← (optional) saved PyMC model
-```
+1. Vrabel, M., Kölle, P., Brunner, K. M., Gattner, M. J., López-Carrillo, V., de Vivie-Riedle, R., et al. (2013).  
+   *Norbornenes in inverse electron-demand Diels-Alder reactions*. Chem. Eur. J. **19** (40), 13309–13312.  
+   DOI: [10.1002/chem.201301838](https://doi.org/10.1002/chem.201301838)
 
-## 🚀 Getting Started
+2. Wang, D., Chen, W., Zheng, Y., Dai, C., Wang, K., Ke, B., Wang, B. (2014).  
+   *3,6-Substituted-1,2,4,5-Tetrazines: Tuning Reaction Rates for Staged Labeling Applications*.  
+   Org. Biomol. Chem. **12** (23), 3950–3955.  
+   DOI: [10.1039/c4ob00280f](https://doi.org/10.1039/c4ob00280f)
 
-1. Clone this repository:
-```
-git clone https://github.com/yourusername/bayesian-iedda-rate-predictor.git
-cd bayesian-iedda-rate-predictor
-```
+Due to copyright and reuse restrictions, the dataset file (`rate constant (IEDDAR).csv`) is **not included** in this repository.  
+Please consult the original publications for access to the raw data.
 
-2. Set up your environment (recommended: `conda`):
-```
-conda env create -f environment.yml
-conda activate iedda-model
-```
+## How to Use
 
-3. Run the notebook:
-Open `main.ipynb` in Jupyter or Google Colab and follow the steps.
-
-## 📦 Dependencies
-
-- Python 3.11+
-- PyMC ≥ 5.0
-- RDKit ≥ 2023.03
-- scikit-learn, pandas, seaborn, matplotlib, arviz
-
-## 📂 Data
-
-The dataset (`rate_constant_IEDDA.csv`) includes:
-- SMILES for NB and Tz
-- Solvent parameters (dielectric, ET30, temperature)
-- Observed rate constants (*k₂*) and errors
-
-## 📬 Contact
-
-For questions, please contact the corresponding author via email.
-
+1. Clone or download this repository
+2. Set up the environment using conda:
+   ```bash
+   conda env create -f environment.yml
+   conda activate iedda-model
+   ```
+3. Open the notebook and upload the appropriate dataset when prompted.
